@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 
 import '../data/trivia_facts.dart';
 import '../models/trivia_fact.dart';
+import '../utils/utils.dart' as utils;
+import 'fact_list_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -28,6 +30,14 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Hello Flutter Trivia'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.list),
+            onPressed: () {
+              utils.navigateTo(context, const FactListScreen());
+            },
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
