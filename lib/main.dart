@@ -13,9 +13,15 @@ class HelloFlutterTriviaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // debugShowCheckedModeBanner: ,
       title: strings.appName,
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        appBarTheme: const AppBarTheme(
+          centerTitle: true,
+          backgroundColor: Colors.blue,
+          foregroundColor: Colors.white,
+        ),
       ),
       home: const HomeScreen(),
     );

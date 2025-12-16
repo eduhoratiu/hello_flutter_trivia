@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
 
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.large(
         onPressed: _shuffleFact,
         child: const Icon(Icons.refresh),
       ),
