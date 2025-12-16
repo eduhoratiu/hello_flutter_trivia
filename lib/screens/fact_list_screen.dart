@@ -23,6 +23,9 @@ class FactListScreen extends StatelessWidget {
             ),
             title: Text(fact.title),
             subtitle: Text(fact.text),
+            onTap: () {
+              Navigator.pop<TriviaFact>(context, fact);
+            },
           );
         },
       ),

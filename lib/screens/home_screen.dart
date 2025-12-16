@@ -25,6 +25,19 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  Future<void> _navigateToFactList() async {
+    final selectedFact = await utils.navigateTo<TriviaFact>(
+      context,
+      const FactListScreen(),
+    );
+
+    if (selectedFact != null) {
+      setState(() {
+        _currentFact = selectedFact;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,9 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           IconButton(
             icon: const Icon(Icons.list),
-            onPressed: () {
-              utils.navigateTo(context, const FactListScreen());
-            },
+            onPressed: _navigateToFactList,
           ),
         ],
       ),
